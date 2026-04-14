@@ -7,11 +7,13 @@ namespace CatalogoExpress.Controllers;
 public class ProductosController : Controller
 {
     public IActionResult Index(){
+        Catalogo cata = new Catalogo();
+        List<Producto> Productos = cata.ObtenerProductos();
+        ViewBag.Productos = Productos;
         //TODO 1:
         // - Crear un Catalogo
         // - Obtener la lista de Productos del catalogo
         // - Pasarla a la view usando Model
-
         return View();
     }
 
