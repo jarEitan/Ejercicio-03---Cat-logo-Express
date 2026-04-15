@@ -11,8 +11,8 @@
 @foreach (Producto ite in ViewBag.Productos)
 {
  <li>@ite.ObtenerNombre() - @ite.ObtenerPrecio() </li>
- <a href= '@Url.Action("Detalle","ite", new { nombre = ite.ObtenerNombre()})' alt="Dar Detalles" > aaa</a>
-}git 
+ <a href= '@Url.Action("Detalle","Productos", new { nombre = ite.ObtenerNombre()})' alt="Dar Detalles" > aaa</a>
+}
     @*  
     TODO:
        - Recorrer la lista de productos (ej: Model)!

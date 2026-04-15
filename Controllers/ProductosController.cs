@@ -18,12 +18,17 @@ public class ProductosController : Controller
     }
 
     public IActionResult Detalle(string nombre){
+        Catalogo cata = new Catalogo();
+        Producto producto = cata.ObtenerProductoPorNombre(nombre);
+            if(producto == null){
+                return View("NoEncontrado");
+            }
+        ViewBag.Producto = producto; 
+        return View();
         //TODO 2:
         // - Crear un Catalogo
         // - Obtener el Producto por su nombre
         // - Si el nombre viene vacio/null o no existe -> View de no encontrado
         // - Si existe se muestra la view con su información
-
-        return View();
      }
 }
